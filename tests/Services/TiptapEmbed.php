@@ -3,8 +3,8 @@
 namespace Ueberdosis\CommonMark\Tests\Services;
 
 use League\CommonMark\Node\Node;
-use Ueberdosis\CommonMark\Embed;
 use League\CommonMark\Util\HtmlElement;
+use Ueberdosis\CommonMark\Embed;
 use Ueberdosis\CommonMark\ServiceInterface;
 
 class TiptapEmbed implements ServiceInterface
@@ -12,7 +12,7 @@ class TiptapEmbed implements ServiceInterface
     /**
     * A RegEx pattern that should match the embed URL
     */
-    const pattern = 'https:\/\/embed\.tiptap\.dev\/preview\/[A-Za-z\/?&]*';
+    public const pattern = 'https:\/\/embed\.tiptap\.dev\/preview\/[A-Za-z\/?&]*';
 
     /**
         * @param Embed $node

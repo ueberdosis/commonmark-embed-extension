@@ -2,12 +2,12 @@
 
 namespace Ueberdosis\CommonMark\Tests;
 
-use PHPUnit\Framework\TestCase;
-use League\CommonMark\MarkdownConverter;
-use Ueberdosis\CommonMark\EmbedExtension;
 use League\CommonMark\Environment\Environment;
-use Ueberdosis\CommonMark\Tests\Services\TiptapEmbed;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\MarkdownConverter;
+use PHPUnit\Framework\TestCase;
+use Ueberdosis\CommonMark\EmbedExtension;
+use Ueberdosis\CommonMark\Tests\Services\TiptapEmbed;
 
 class EmbedExtensionTest extends TestCase
 {

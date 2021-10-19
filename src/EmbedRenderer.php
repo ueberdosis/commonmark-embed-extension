@@ -5,7 +5,6 @@ namespace Ueberdosis\CommonMark;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;
-use League\CommonMark\Util\HtmlElement;
 
 final class EmbedRenderer implements NodeRendererInterface
 {
