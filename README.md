@@ -1,13 +1,13 @@
 > We need your support to maintain this package. 💖 https://github.com/sponsors/ueberdosis
 
-# CommonMark Hint Extension
+# CommonMark Embed Extension
 
 [![](https://img.shields.io/packagist/v/ueberdosis/commonmark-embed-extension.svg)](https://packagist.org/packages/ueberdosis/commonmark-embed-extension)
 [![Tests](https://github.com/ueberdosis/commonmark-embed-extension/actions/workflows/test.yml/badge.svg)](https://github.com/ueberdosis/commonmark-embed-extension/actions/workflows/test.yml)
 [![](https://img.shields.io/packagist/dt/ueberdosis/commonmark-embed-extension.svg)](https://packagist.org/packages/ueberdosis/commonmark-embed-extension)
 [![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub)](https://github.com/sponsors/ueberdosis)
 
-A hint extension for [league/commonmark](https://github.com/thephpleague/commonmark) that renders the following Markdown as HTML.
+An extension to transform URLs to embeds with [league/commonmark](https://github.com/thephpleague/commonmark).
 
 ## Example
 
