@@ -15,8 +15,8 @@ class TiptapEmbed implements ServiceInterface
     public const pattern = 'https:\/\/embed\.tiptap\.dev\/preview\/[A-Za-z\/?&]*';
 
     /**
-        * @param Embed $node
-        */
+    * @param Embed $node
+    */
     public function render(Node $node): HtmlElement
     {
         Embed::assertInstanceOf($node);

@@ -13,12 +13,20 @@ An extension to transform URLs to embeds with [league/commonmark](https://github
 
 ### Markdown
 ```md
-TODO
+OMG, you should see this video:
+
+https://www.youtube.com/watch?v=eX2qFMC8cFo
+
+It‘s amazing, isn’t it?
 ```
 
 ### HTML
 ```html
-TODO
+<p>OMG, you should see this video:</p>
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eX2qFMC8cFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+It‘s amazing, isn’t it?
 ```
 
 ## Installation
@@ -38,11 +46,12 @@ use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\MarkdownConverter;
 use Ueberdosis\CommonMark\EmbedExtension;
+use Ueberdosis\CommonMark\Tests\Services\YouTube;
 
 // Configure the Environment with all the CommonMark parsers/renderers
 $environment = new Environment([
     'embeds' => [
-        // TODO
+        new YouTube(),
     ],
 ]);
 $environment->addExtension(new CommonMarkCoreExtension());
@@ -53,7 +62,7 @@ $environment->addExtension(new EmbedExtension());
 // Instantiate the converter engine and start converting some Markdown!
 $converter = new MarkdownConverter($environment);
 $markdown = <<<MARKDOWN
-TODO
+https://www.youtube.com/watch?v=eX2qFMC8cFo
 MARKDOWN;
 
 echo $converter->convertToHtml($markdown);
