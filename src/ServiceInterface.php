@@ -2,10 +2,10 @@
 
 namespace Ueberdosis\CommonMark;
 
-use League\CommonMark\Node\Node;
+use Ueberdosis\CommonMark\Embed;
 use League\CommonMark\Util\HtmlElement;
 
 interface ServiceInterface
 {
-    public function render(Node $node): HtmlElement;
+    public function render(Embed $node): HtmlElement;
 }

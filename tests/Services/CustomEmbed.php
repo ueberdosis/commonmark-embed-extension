@@ -2,27 +2,18 @@
 
 namespace Ueberdosis\CommonMark\Tests\Services;
 
-use League\CommonMark\Node\Node;
 use League\CommonMark\Util\HtmlElement;
 use Ueberdosis\CommonMark\Embed;
 use Ueberdosis\CommonMark\ServiceInterface;
 
-class TiptapEmbed implements ServiceInterface
+class CustomEmbed implements ServiceInterface
 {
-    /**
-    * A RegEx pattern that should match the embed URL
-    */
-    public const pattern = 'https:\/\/embed\.tiptap\.dev\/preview\/[A-Za-z\/?&]*';
+    public const pattern = 'https:\/\/example\.com\/custom\/([A-Za-z\/]*)(\?[A-Za-z&]*)?';
 
-    /**
-    * @param Embed $node
-    */
-    public function render(Node $node): HtmlElement
+    public function render(Embed $node): HtmlElement
     {
-        Embed::assertInstanceOf($node);
-
         return new HtmlElement(
-            'tiptap-demo',
+            'custom-embed',
             array_merge([
                 'name' => $this->getName($node),
             ], $this->getAttributes($node)),
@@ -31,7 +22,7 @@ class TiptapEmbed implements ServiceInterface
 
     protected function getName($node)
     {
-        preg_match('/preview\/([A-Za-z\/]*)/', $node->getUrl(), $matches);
+        preg_match('/'.self::pattern.'/', $node->getUrl(), $matches);
 
         return $matches[1] ?? '';
     }

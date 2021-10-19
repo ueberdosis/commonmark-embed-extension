@@ -7,9 +7,9 @@ use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\MarkdownConverter;
 use PHPUnit\Framework\TestCase;
 use Ueberdosis\CommonMark\EmbedExtension;
-use Ueberdosis\CommonMark\Tests\Services\TiptapEmbed;
+use Ueberdosis\CommonMark\Tests\Services\CustomEmbed;
 
-class EmbedExtensionTest extends TestCase
+class CustomEmbedExtensionTest extends TestCase
 {
     /** @test */
     public function url_is_transformed_to_an_embed()
@@ -17,7 +17,7 @@ class EmbedExtensionTest extends TestCase
         // Configure the Environment with all the CommonMark parsers/renderers
         $environment = new Environment([
             'embeds' => [
-                new TiptapEmbed(),
+                new CustomEmbed(),
             ],
         ]);
         $environment->addExtension(new CommonMarkCoreExtension());
@@ -28,11 +28,11 @@ class EmbedExtensionTest extends TestCase
         // Instantiate the converter engine and start converting some Markdown!
         $converter = new MarkdownConverter($environment);
         $markdown = <<<MARKDOWN
-https://embed.tiptap.dev/preview/Example/Default
+https://example.com/custom/Example/Default
 MARKDOWN;
 
         $this->assertEquals((string) $converter->convertToHtml($markdown), <<<HTML
-<tiptap-demo name="Example/Default"></tiptap-demo>
+<custom-embed name="Example/Default"></custom-embed>
 
 HTML);
     }
@@ -43,7 +43,7 @@ HTML);
         // Configure the Environment with all the CommonMark parsers/renderers
         $environment = new Environment([
             'embeds' => [
-                new TiptapEmbed(),
+                new CustomEmbed(),
             ],
         ]);
         $environment->addExtension(new CommonMarkCoreExtension());
@@ -54,11 +54,11 @@ HTML);
         // Instantiate the converter engine and start converting some Markdown!
         $converter = new MarkdownConverter($environment);
         $markdown = <<<MARKDOWN
-https://embed.tiptap.dev/preview/Example/Default?inline
+https://example.com/custom/Example/Default?inline
 MARKDOWN;
 
         $expected = <<<HTML
-<tiptap-demo name="Example/Default" inline=""></tiptap-demo>
+<custom-embed name="Example/Default" inline=""></custom-embed>
 
 HTML;
         $this->assertEquals($expected, (string) $converter->convertToHtml($markdown));
@@ -70,7 +70,7 @@ HTML;
         // Configure the Environment with all the CommonMark parsers/renderers
         $environment = new Environment([
             'embeds' => [
-                new TiptapEmbed(),
+                new CustomEmbed(),
             ],
         ]);
         $environment->addExtension(new CommonMarkCoreExtension());
@@ -81,11 +81,11 @@ HTML;
         // Instantiate the converter engine and start converting some Markdown!
         $converter = new MarkdownConverter($environment);
         $markdown = <<<MARKDOWN
-https://embed.tiptap.dev/preview/Example/Default?hideSource
+https://example.com/custom/Example/Default?hideSource
 MARKDOWN;
 
         $expected = <<<HTML
-<tiptap-demo name="Example/Default" hide-source=""></tiptap-demo>
+<custom-embed name="Example/Default" hide-source=""></custom-embed>
 
 HTML;
         $this->assertEquals($expected, (string) $converter->convertToHtml($markdown));

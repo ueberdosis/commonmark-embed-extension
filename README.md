@@ -47,11 +47,13 @@ use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\MarkdownConverter;
 use Ueberdosis\CommonMark\EmbedExtension;
 use Ueberdosis\CommonMark\Tests\Services\YouTube;
+use Ueberdosis\CommonMark\Tests\Services\Vimeo;
 
 // Configure the Environment with all the CommonMark parsers/renderers
 $environment = new Environment([
     'embeds' => [
         new YouTube(),
+        new Vimeo(),
     ],
 ]);
 $environment->addExtension(new CommonMarkCoreExtension());
