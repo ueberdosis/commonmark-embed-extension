@@ -2,7 +2,6 @@
 
 namespace Ueberdosis\CommonMark;
 
-use Ueberdosis\CommonMark\Embed;
 use League\CommonMark\Util\HtmlElement;
 
 interface ServiceInterface
