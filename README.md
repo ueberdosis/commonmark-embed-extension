@@ -37,6 +37,13 @@ You can install the package via composer:
 composer require ueberdosis/commonmark-embed-extension
 ```
 
+## Supported services
+
+* YouTube
+* Vimeo
+
+H[ave a look at the provided services](https://github.com/ueberdosis/commonmark-embed-extension/tree/main/src/Services) to learn how you can add your own integrations. Don’t forget to send a PR with your additions!
+
 ## Usage
 
 ```php
