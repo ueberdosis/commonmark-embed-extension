@@ -2,11 +2,11 @@
 
 namespace Ueberdosis\CommonMark;
 
-use Nette\Schema\Expect;
-use League\Config\ConfigurationBuilderInterface;
-use League\Config\Exception\InvalidConfigurationException;
 use League\CommonMark\Environment\EnvironmentBuilderInterface;
 use League\CommonMark\Extension\ConfigurableExtensionInterface;
+use League\Config\ConfigurationBuilderInterface;
+use League\Config\Exception\InvalidConfigurationException;
+use Nette\Schema\Expect;
 
 class EmbedExtension implements ConfigurableExtensionInterface
 {
@@ -34,6 +34,6 @@ class EmbedExtension implements ConfigurableExtensionInterface
             // }
         }
 
-        $environment->addRenderer(Embed::class, new EmbedRenderer);
+        $environment->addRenderer(Embed::class, new EmbedRenderer());
     }
 }
